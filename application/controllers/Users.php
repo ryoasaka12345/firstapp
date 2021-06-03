@@ -7,6 +7,7 @@ class Users extends CI_Controller
         parent::__construct();
 
         $this->load->model('users_model');
+        $this->load->helper('url');
     }
 
     public function index()
@@ -18,5 +19,38 @@ class Users extends CI_Controller
         $this->load->view('users/index', $data);
 
         $this->load->view('footer');
+    }
+
+    public function create()
+    {
+
+        /* 
+            Helpers, as the name suggests, help you with tasks.
+            Each helper file is simply a collection of functions
+            in a particular category.
+        */
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->load->helper('url');
+
+        $data["page_title"] = "Create New User";
+        /*
+            set_rules( arg1, arg2, arg3)
+                arg1: The field name
+                arg2: A "human name for this field
+                arg3: custom error messages
+        */
+        $this->form_validation->set_rules('first_name', 'First name', 'required');
+        $this->form_validation->set_rules('last_name', 'Last name', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->load->view('header', $data);
+            $this->load->view('users/create', $data);
+            $this->load->view('footer');
+        } else {
+            $this->users_model->create_user();
+            redirect(base_url('/'));
+        }
     }
 }
