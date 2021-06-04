@@ -26,7 +26,8 @@ class Users_model extends CI_model {
         $data = array(
             'first_name' => $this->input->post('first_name'),
             'last_name' => $this->input->post('last_name'),
-            'email' => $this->input->post('email')
+            'email' => $this->input->post('email'),
+            'phone_number' => $this->input->post('phone_number')
         );
 
         // runs the query
@@ -38,7 +39,8 @@ class Users_model extends CI_model {
         $data = array(
             'first_name' => $this->input->post('first_name'),
             'last_name' => $this->input->post('last_name'),
-            'email' => $this->input->post('emai')
+            'email' => $this->input->post('emai'),
+            'phone_number' => $this->input->post('phone_number')
         );
 
         // runs the query
