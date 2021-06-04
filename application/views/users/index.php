@@ -2,24 +2,27 @@
     <div class="container">
         <h1>List of User</h1>
         <table class="table table-striped table-hover">
-            <thad>
+            <thead>
                 <tr>
+                    <th><input type="checkbox"></th>
                     <th scope="col">#</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Phpne Number</th>
                     <th scope="col">Action</th>
                 </tr>
-            </thad>
+            </thead>
             <tbody>
                 <?php foreach ($users as $user) : ?>
                     <tr>
+                        <td><input type="checkbox"></td>
                         <th scope="row"><?php echo $user["id"]; ?></th>
                         <td><?php echo $user["first_name"]; ?></td>
                         <td><?php echo $user["last_name"]; ?></td>
                         <td><?php echo $user["phone_number"]; ?></td>
                         <td>
-                            <a href="#"><button class="btn btn-primary btn-sm">View</button></a>
+                            <?php $test=1?>
+                            <a href="<?php echo site_url("users/view_user/$user[id]");?>"><button class="btn btn-primary btn-sm">View</button></a>
                             <a href="<?php echo site_url("users/update/$user[id]") ?>"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
                             <a onclick="return confirm ('Are you sure to delete this user?')" href="<?php echo site_url("users/delete/$user[id]") ?>">
                                 <button class="btn btn-sm">Delete</button>

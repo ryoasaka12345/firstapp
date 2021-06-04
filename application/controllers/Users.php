@@ -21,6 +21,16 @@ class Users extends CI_Controller
         $this->load->view('footer');
     }
 
+    public function view_user($user_id)
+    {
+        $this->load->view('header');
+
+        $data["user"] = $this->users_model->get_user($user_id);
+        $this->load->view('users/view_user', $data);
+
+        $this->load->view('footer');
+    }
+
     public function create()
     {
 
