@@ -13,6 +13,8 @@ class Users extends CI_Controller
     public function index()
     {
         $this->load->view('header');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
 
         // view will assign users list by variable named $users
         $data["users"] = $this->users_model->get_users();
@@ -93,10 +95,11 @@ class Users extends CI_Controller
         redirect(base_url('/'));
     }
 
-    public function deleteAll($users_id_list)
+    public function delete_multi()
     {
-        foreach ($users_id_list as $user_id){
-            $this->users_model->delete_user($user_id);
+        $user_ids = $this->input->post('ids');
+        if ($user_ids !== null) {
+            $this->users_model->delete_users($user_ids);
         }
         redirect(base_url('/'));
     }

@@ -1,7 +1,7 @@
 function checkAll() 
 {
     const usrCheck = document.querySelectorAll(".usrCheck");
-    const usrCheckAll = document.querySelector("#usrCheckAll");
+    const usrCheckAll = document.querySelector("#select-All");
 
     for (i = 0; i < usrCheck.length; i++) {
         if (usrCheckAll.checked) {
