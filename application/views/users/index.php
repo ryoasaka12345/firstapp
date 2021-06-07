@@ -25,7 +25,7 @@
                             <a href="<?php echo site_url("users/view_user/$user[id]"); ?>"><span class="btn btn-primary btn-sm">View</span></button></a>
                             <a href="<?php echo site_url("users/update/$user[id]"); ?>"><span class="btn btn-outline-primary btn-sm">Edit</span></button></a>
                             <a onclick="return confirm ('Are you sure to delete this user?')" href="<?php echo site_url("users/dqelete/$user[id]") ?>">
-                                <button class="btn btn-sm">Delete</button>
+                                <span class="btn btn-sm">Delete</span>
                             </a>
                         </td>
                     </tr>
