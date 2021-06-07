@@ -1,5 +1,5 @@
 <main role="main" class="flex-shrink-0">
-    <div class="constainer">
+    <div class="container">
         <h1>Update User</h1>
         <?php echo validation_errors(); ?>
         <?php echo form_open('users/update/' . $user->id); ?>
@@ -20,5 +20,6 @@
             <input type="text" class="form-control" name="phone_number" id="phone_number" value="<?php echo $user->phone_number;?>">
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
+        <?php echo form_close();?>
     </div>
 </main>
