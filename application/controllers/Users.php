@@ -92,4 +92,12 @@ class Users extends CI_Controller
         $this->users_model->delete_user($user_id);
         redirect(base_url('/'));
     }
+
+    public function deleteAll($users_id_list)
+    {
+        foreach ($users_id_list as $user_id){
+            $this->users_model->delete_user($user_id);
+        }
+        redirect(base_url('/'));
+    }
 }
