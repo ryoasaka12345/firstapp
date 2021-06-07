@@ -4,9 +4,9 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th><input type="checkbox"></th>
+                    <th><input type="checkbox" id="usrCheckAll" onchange="checkAll()"></th>
                     <th scope="col">#</th>
-                    <th scope="col">First Name</th>
+                    <th scope="col">Pirst Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Phpne Number</th>
                     <th scope="col">Action</th>
@@ -15,7 +15,7 @@
             <tbody>
                 <?php foreach ($users as $user) : ?>
                     <tr>
-                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox" class="usrCheck" value="<?php echo $user["id"]?>"></td>
                         <th scope="row"><?php echo $user["id"]; ?></th>
                         <td><?php echo $user["first_name"]; ?></td>
                         <td><?php echo $user["last_name"]; ?></td>
@@ -32,5 +32,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <p><button onclick="selectChecked()">Delete</button></p>
+        <p><span class = "testOutput">aaa</span></p>
     </div>
 </main>

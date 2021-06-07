@@ -12,7 +12,6 @@
     <!-- (meta: infrormation about the document) -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- 
         base_url:
         Create a local URL based on your basepath. 
@@ -20,8 +19,8 @@
     -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
     <link rer="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
+    <script src='assets/js/util_checkbox.js'></script>
     <title>List of Users</title>
-
 </head>
 
 <body class="d-flex flex-column h-100">
